@@ -25,5 +25,11 @@ const eqArrays = function(array1, array2) {
   return result;
 };
   
-assertEqual(eqArrays([], []), true);
+assertEqual(eqArrays([1,2,3], [1,2,3]), true);
+
+assertEqual(eqArrays([1,2,3], [1,2,3]), true);
+assertEqual(eqArrays([], [1,2,3]), true); 
+assertEqual(eqArrays([], []), false);   
+assertEqual(eqArrays([1,"a",3], [1,2,3]), true);
+assertEqual(eqArrays(["v","a","3"], [1,2,3]),true);
   
