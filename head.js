@@ -7,10 +7,8 @@ const assertEqual = function(actual, expected) {
 };
   
 const tail = function(array) {
- // let headOfArray = array[0];
-  //return headOfArray;
-
-  _.tail([1, 2, 3]);
+  let headOfArray = array[0];
+  return headOfArray;
 };
   
 assertEqual(tail([5,6,7]), 5);
