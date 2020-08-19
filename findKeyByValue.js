@@ -1,25 +1,24 @@
 const assertArraysEqual = function(array1, array2) {
   let result = true;
-  
+      
   result = eqArrays(array1,array2);
-          
+              
   if (result) {
     console.log(`✅✅✅  Arrays are same : [${array1}]  === [${array2}]`);
   } else {
     console.log(`🔴🔴🔴  Arrays are not same : [${array1}] !== [${array2}]`);
   }
 };
-    
+        
 const eqArrays = function(array1, array2) {
   let result = true;
-      
   if (array1 === undefined || array2 === undefined) {
     if (array1 === array2) {
       return result;
     }
+        
     return false;
   }
-
   //case 1: check if two array are of same length. else two array are not perfect match
   if (array1.length === array2.length) {
     for (let i = 0; i < array1.length; i++) {
@@ -32,34 +31,29 @@ const eqArrays = function(array1, array2) {
   } else {
     result = false;
   }
-      
+          
   return result;
 };
-
-const countLetters = function(sentence) {
-  const results = {};
-  let index = 0;
-
-  for (const letter of sentence) {
-    if (letter !== " ") {
-      if (results[letter]) {
-        results[letter].push(index);
-      } else {
-        results[letter] = [index];
-      }
+  
+const findKeyByValue = function(array1,searchKeyword) {
+  let results;
+  for (let item in array1) {
+    if (item !== " " && array1[item] === searchKeyword) {
+      results = item;
     }
-    index++;
   }
-      
   return results;
 };
-      
-console.log(countLetters("lighthouse in the house"));
-console.log(countLetters(""));
-console.log(countLetters("lllll"));
-console.log(countLetters("count letters 0 1 0 9 0 1 0 9 8"));
- 
-assertArraysEqual(countLetters("count letters 0 1 0 9 0 1 0 9 8")['8'], [30]);
-assertArraysEqual(countLetters("hello").o, [4]);
-assertArraysEqual(countLetters("").o, [4]);
-assertArraysEqual(countLetters("lllll").l, [4]);
+const bestTVShowsByGenre = {
+  sciFi: "The Expanse",
+  comedy: "Brooklyn Nine-Nine",
+  drama:  "The Wire"
+};
+
+assertArraysEqual(findKeyByValue(bestTVShowsByGenre, ""), "The Expanse");
+assertArraysEqual(findKeyByValue(bestTVShowsByGenre, "The Expanse"), "The Expanse");
+assertArraysEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
+assertArraysEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
+
+    
+  

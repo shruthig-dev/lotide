@@ -13,6 +13,9 @@ const assertArraysEqual = function(array1, array2) {
 const eqArrays = function(array1, array2) {
   let result = true;
   if (array1 === undefined || array2 === undefined) {
+    if (array1 === array2) {
+      return result;
+    }
     return false;
   }
   //case 1: check if two array are of same length. else two array are not perfect match

@@ -14,6 +14,9 @@ const eqArrays = function(array1, array2) {
   let result = true;
   
   if (array1 === undefined || array2 === undefined) {
+    if (array1 === array2) {
+      return result;
+    }
     return false;
   }
     
