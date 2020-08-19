@@ -9,6 +9,10 @@ const assertEqual = function(actual, expected) {
 const eqArrays = function(array1, array2) {
   let result = true;
   
+  if (array1 === undefined || array2 === undefined) {
+    return false;
+  }
+
   //case 1: check if two array are of same length. else two array are not perfect match
   if (array1.length === array2.length) {
     for (let i = 0; i < array1.length; i++) {
@@ -28,8 +32,8 @@ const eqArrays = function(array1, array2) {
 assertEqual(eqArrays([1,2,3], [1,2,3]), true);
 
 assertEqual(eqArrays([1,2,3], [1,2,3]), true);
-assertEqual(eqArrays([], [1,2,3]), true); 
-assertEqual(eqArrays([], []), false);   
+assertEqual(eqArrays([], [1,2,3]), true);
+assertEqual(eqArrays([], []), false);
 assertEqual(eqArrays([1,"a",3], [1,2,3]), true);
 assertEqual(eqArrays(["v","a","3"], [1,2,3]),true);
   
