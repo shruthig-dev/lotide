@@ -13,6 +13,10 @@ const assertArraysEqual = function(array1, array2) {
 const eqArrays = function(array1, array2) {
   let result = true;
   
+  if(array1 === null && array2 === null)
+  {
+    return true;
+  }
   if (array1 === undefined || array2 === undefined) {
     if (array1 === array2) {
       return result;
